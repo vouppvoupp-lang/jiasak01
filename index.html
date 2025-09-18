@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ร้านรองเท้า - Shoez</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Shoez</div>
+    <div class="search-bar">
+      <input id="searchInput" type="search" placeholder="ค้นหารองเท้า เช่น 'ไนกี้'  หรือ 'ส้นสูง'..." />
+      <select id="sortSelect" aria-label="เรียงลำดับ">
+        <option value="default">เรียงตาม: แนะนำ</option>
+        <option value="price-asc">ราคาต่ำ → สูง</option>
+        <option value="price-desc">ราคาสูง → ต่ำ</option>
+        <option value="name-asc">ชื่อ A → Z</option>
+      </select>
+    </div>
+    <button id="cartToggle" class="cart-btn" aria-label="เปิดตะกร้า">
+      ตะกร้า (<span id="cartCount">0</span>)
+    </button>
+  </header>
+
+  <main class="main">
+    <aside class="filters">
+      <h3>ตัวกรอง</h3>
+      <label>
+        หมวดหมู่
+        <select id="categorySelect">
+          <option value="all">ทั้งหมด</option>
+          <option value="sneakers">Sneakers</option>
+          <option value="heels">Heels</option>
+          <option value="boots">Boots</option>
+          <option value="sandals">Sandals</option>
+        </select>
+      </label>
+
+      <label>
+        ขนาด
+        <select id="sizeSelect">
+          <option value="all">ทั้งหมด</option>
+          <option value="36">36</option>
+          <option value="37">37</option>
+          <option value="38">38</option>
+          <option value="39">39</option>
+          <option value="40">40</option>
+        </select>
+      </label>
+
+      <button id="clearFilters">ล้างตัวกรอง</button>
+    </aside>
+
+    <section class="products-section">
+      <div id="productsGrid" class="products-grid"></div>
+    </section>
+
+    <aside id="cartSidebar" class="cart-sidebar hidden" aria-hidden="true">
+      <div class="cart-header">
+        <h3>ตะกร้าสินค้า</h3>
+        <button id="closeCart">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="totals">
+          <div>รวม: <strong id="cartTotal">0</strong> ฿</div>
+          <div>จำนวน: <strong id="cartQuantity">0</strong></div>
+        </div>
+        <button id="checkoutBtn" class="primary">ชำระเงิน</button>
+        <button id="clearCartBtn" class="danger">ล้างตะกร้า</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    © <span id="year"></span> Shoez — ร้านรองเท้าตัวอย่าง
+  </footer>
+ 
+  
+  <script src="app.js" defer></script>
+</body>
+</html>
